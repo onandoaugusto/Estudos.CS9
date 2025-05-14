@@ -1,0 +1,14 @@
+D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\Estudos.CS9.GeneratedMSBuildEditorConfig.editorconfig
+D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\Estudos.CS9.AssemblyInfoInputs.cache
+D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\Estudos.CS9.AssemblyInfo.cs
+D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\Estudos.CS9.csproj.CoreCompileInputs.cache
+D:\Armazenamento\git\f\Estudos.CS9\bin\Debug\net9.0\Estudos.CS9.exe
+D:\Armazenamento\git\f\Estudos.CS9\bin\Debug\net9.0\Estudos.CS9.deps.json
+D:\Armazenamento\git\f\Estudos.CS9\bin\Debug\net9.0\Estudos.CS9.runtimeconfig.json
+D:\Armazenamento\git\f\Estudos.CS9\bin\Debug\net9.0\Estudos.CS9.dll
+D:\Armazenamento\git\f\Estudos.CS9\bin\Debug\net9.0\Estudos.CS9.pdb
+D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\Estudos.CS9.dll
+D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\refint\Estudos.CS9.dll
+D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\Estudos.CS9.pdb
+D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\Estudos.CS9.genruntimeconfig.cache
+D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\ref\Estudos.CS9.dll
