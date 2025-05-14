@@ -236,6 +236,9 @@ namespace EstudosCS9.M1
 
             // 3.6.2 Uso Avançado de Expressões 'switch'
             AdvancedSwitchExpressions();
+
+            //3.6.3 Erros Comuns e Boas Práticas
+            //GoodPractices();
         }
         
         private static void BasicWhen()
@@ -272,6 +275,7 @@ namespace EstudosCS9.M1
             ListFiltering();
         }
 
+        //3.6.2.1 Validação Complexa
         private static void ComplexValidation()
         {
             var pessoa = new { Nome = "Gritzerai", Idade = 25, Estado = "RJ" };
@@ -285,14 +289,90 @@ namespace EstudosCS9.M1
 
             Console.WriteLine(mensagem);
         }
+        //3.6.2.2 Filtro em listas
         private static void ListFiltering()
         {
+            var numeros = new List<object> {-2, -1, 0, 1, 2, "3", 4, "5", "zero"};
+            foreach (var num in numeros)
+            {
+                string mensagem = string.Empty;
+                switch(num)
+                {
+                    case int n when n == 0:
+                        mensagem = "zero";
+                        break;
 
+                    case int n when n > 0:
+                        var isEven = NumberIsEven(n);
+                        mensagem = isEven.Mensagem;
+                        break;
+
+                    case int n when n < 0:
+                        var isNegativeEven = NumberIsEven(n * 1);
+                        mensagem = $"{isNegativeEven.Mensagem} (negativo)";
+                        break;
+
+                    case string s when int.TryParse(s, out int sn):
+                        mensagem = $"String numérica: {sn}";
+                        break;
+
+                    default:
+                        mensagem = $"string genérica: {num}";
+                        break;
+                }
+
+                Console.WriteLine(mensagem);
+            }
+        }
+
+        private static IsEven NumberIsEven(int i)
+        {
+            bool _isEven = i % 2 == 0;
+            return new IsEven(Inteiro: i, isEven: _isEven, Mensagem: $"{i} é {(_isEven ? "par" : "ímpar")}");
+        }
+        
+        //3.6.3 Erros Comuns e Boas Práticas
+        private static void GoodPractices()
+        {
+            //Problema 1: Ordem Importa
+            gpOrderMatters(7);
+
+            //Problema 2: performance
+            gpPerformance(new Produto("Livro", 10, 42));
+        }
+
+        //Problema 1: Ordem Importa
+        private static void gpOrderMatters(object valor)
+        {
+            var resultado = valor switch
+            {
+                //✅ Correto - padrões específicos primeiro
+                int i when i > 10 => "Número maior que 10", //
+                int i => "Número",
+                //❌ Padrão Mais genérico primeiro - nunca alcançará o específico
+                // Nunca será alcançado:
+                //int i when i > 10 => "Número maior que 10",
+                
+                _ => "O)utro"
+            };
+        }
+        //Problema 2: performance
+        private static void gpPerformance(Produto produto)
+        {
+            //Evite condições complexas demais no 'when' - considere extrair para métodos
+            bool IsProdutoValidado(Produto p) => p.Preco > 0 && p.Estoque >= 0;
+            var status = produto switch
+            {
+                _ when !IsProdutoValidado(produto) => "Inválido",
+                {Estoque: 0} => "Esgotado",
+                _ => "Disponível"
+            };
         }
         #endregion
     }
     #region Objetos de auxílio
-    public record Produto(string Nome, decimal Preco);
+    public record IsEven(int Inteiro, bool isEven, string Mensagem);
+    public record Produto(string Nome, decimal Preco, decimal Estoque = 1);
     public record Pessoa(string Nome, int Idade);
     public class Cliente
     {

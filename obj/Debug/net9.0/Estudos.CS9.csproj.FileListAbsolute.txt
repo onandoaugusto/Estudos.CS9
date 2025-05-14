@@ -12,3 +12,4 @@ D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\refint\Estudos.CS9.dll
 D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\Estudos.CS9.pdb
 D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\Estudos.CS9.genruntimeconfig.cache
 D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\ref\Estudos.CS9.dll
+D:\Armazenamento\git\f\Estudos.CS9\obj\Debug\net9.0\Estudos.CS9.sourcelink.json
